@@ -103,11 +103,11 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                     </div>
                 ) : (
                     <div className="loadingSkeleton">
-                        {/* {skItem()}
                         {skItem()}
                         {skItem()}
                         {skItem()}
-                        {skItem()} */}
+                        {skItem()}
+                        {skItem()}
                     </div>
                 )}
             </ContentWraper>
