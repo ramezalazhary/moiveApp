@@ -10,16 +10,20 @@ export default function HeroBanner() {
     const [query, setQuery] = useState("");
     const [backGround, setBackGround] = useState("");
     const { urlRes } = useSelector(state => state.home)
-    const { data, loading } = useApiFetch("/movie/top_rated")
+    const { data, loading } = useApiFetch("/movie/now_playing")
     const navigate = useNavigate();
 
     useEffect(() => {
 
         if (!data) return;
-
         choosenBackGround()
 
+        const scroll = setInterval(() => {
+            choosenBackGround()
 
+        }, 10000);
+
+        return () => clearInterval(scroll)
     }, [data, urlRes]);
 
     const choosenBackGround = () => {

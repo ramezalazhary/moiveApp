@@ -1,6 +1,7 @@
 @import "../../../mixins.scss";
 
 .castSection {
+
     position: relative;
     margin-bottom: 50px;
 
@@ -13,7 +14,7 @@
     .listItems {
         display: flex;
         gap: 20px;
-        overflow-y: hidden;
+        overflow: hidden;
         margin-right: -20px;
         margin-left: -20px;
         padding: 0 20px;
@@ -24,6 +25,7 @@
         }
 
         .listItem {
+
             text-align: center;
             color: white;
 

@@ -5,7 +5,7 @@ import "./style.scss";
 const Spinner = ({ initial }) => {
     return (
         <div className={`loadingSpinner ${initial ? "initial" : ""}`}>
-            <svg className="spinner" viewBox="0 0 50 50">
+            <svg className="spinner" viewBox="0 0 0 50">
                 <circle
                     className="path"
                     cx="25"

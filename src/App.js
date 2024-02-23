@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import './App.scss';
 import { useEffect } from 'react';
 import { fetchDataFromApi } from './utils/api';
 import { getApiConfiguration } from './store/homeSlice';
