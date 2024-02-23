@@ -1,8 +1,8 @@
 import React
-            from "react";
+    from "react";
 
 import { useSelector }
-                  from "react-redux";
+    from "react-redux";
 
 import "./style.scss";
 
@@ -20,13 +20,16 @@ const Genres = ({
         data?.map((e) => {
             if (!genres[e]?.name) return;
 
-            return (<div key={e}
+            return (
+                <div key={e}
+                    className="genre" >
+                    {
+                        genres[e]?.name
 
-                className="genre" > {
-                    genres[e]?.name
-                }
+                    }
 
-            </div>);
+                </div>
+            );
         })
     }
 

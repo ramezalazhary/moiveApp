@@ -5,7 +5,7 @@ import { fetchDataFromApi } from "../utils/api"
 
 
 const useApiFetch = (url) => {
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [data, setData] = useState(null)
 

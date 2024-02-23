@@ -5,7 +5,7 @@ import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import "./style.scss";
-import logo from "../../assets/movix-logo.svg";
+import logo from "../../assets/Move-New-Logo-2021-removebg-preview.png";
 import ContentWraper from "../contentWraper/ContentWraper";
 
 const Header = () => {

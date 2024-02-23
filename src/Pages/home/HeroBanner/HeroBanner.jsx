@@ -10,13 +10,8 @@ export default function HeroBanner() {
     const [query, setQuery] = useState("");
     const [backGround, setBackGround] = useState("");
     const { urlRes } = useSelector(state => state.home)
-    const { data, loading } = useApiFetch("/movie/upcoming")
-
-
+    const { data, loading } = useApiFetch("/movie/top_rated")
     const navigate = useNavigate();
-
-
-
 
     useEffect(() => {
 
@@ -65,7 +60,7 @@ export default function HeroBanner() {
                             onChange={(e) => setQuery(e.target.value)}
                             onKeyUp={searchQueryHandler}
                         />
-                        <button>Search</button>
+                        <button className='submit'>Search</button>
                     </div>
                 </div>
             </ContentWraper>

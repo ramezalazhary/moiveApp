@@ -61,6 +61,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                     className="carouselRighttNav arrow"
                     onClick={() => navigation("right")}
                 />
+                
                 {!loading ? (
                     <div className="carouselItems" ref={carouselContainer}>
                         {data?.map((item) => {
