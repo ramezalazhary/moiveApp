@@ -8,9 +8,7 @@ import Footer from './Components/Footer/Footer';
 
 function App() {
   const dispatch = useDispatch();
-  const { urlRes } = useSelector(state => state.home)
-
-
+  
   const getConfigurApiData = () => {
 
     fetchDataFromApi("/configuration").then((res) => {
@@ -31,44 +29,6 @@ function App() {
 
 
   }, [])
-
-
-  // useEffect(() => {
-  //   fetchApiConfig();
-  //   genresCall();
-  // }, []);
-
-  // const fetchApiConfig = () => {
-  //   fetchDataFromApi("/configuration").then((res) => {
-  //     console.log(res);
-
-  //     const url = {
-  //       backdrop: res.images.secure_base_url + "original",
-  //       poster: res.images.secure_base_url + "original",
-  //       profile: res.images.secure_base_url + "original",
-  //     };
-
-  //     dispatch(getApiConfiguration(url));
-  //   });
-  // };
-
-  // const genresCall = async () => {
-  //   let promises = [];
-  //   let endPoints = ["tv", "movie"];
-  //   let allGenres = {};
-
-  //   endPoints.forEach((url) => {
-  //     promises.push(fetchDataFromApi(`/genre/${url}/list`));
-  //   });
-
-  //   const data = await Promise.all(promises);
-  //   console.log(data);
-  //   data.map(({ genres }) => {
-  //     return genres.map((item) => (allGenres[item.id] = item));
-  //   });
-
-  //   dispatch(getGenres(allGenres));
-  // };
 
 
   return (
