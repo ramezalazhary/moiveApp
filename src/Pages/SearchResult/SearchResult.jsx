@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
-
 import "./style.scss";
-
 import { fetchDataFromApi } from "../../utils/api";
-
-
-import noResults from "../../assets/no-results.png";
 import ContentWraper from "../../Components/contentWraper/ContentWraper";
 import Spinner from "../../Components/spinner/Spinner";
 import MovieCard from "../../Components/movieCard/MoiveCard";
@@ -71,7 +66,7 @@ const SearchResult = () => {
                 loader={<Spinner />}
               >
                 {data?.results.map((item, index) => {
-                  if (item.media_type === "person") return;
+                  if (item.media_type === "person") return null;
                   return (
                     <MovieCard
                       key={index}

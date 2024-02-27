@@ -11,7 +11,7 @@ import { useInView } from "react-intersection-observer";
 
 
 const Trending = () => {
-    const [ref, inview, entry] = useInView();
+    const [ref, inview] = useInView();
     const [endpoint, setEndpoint] = useState("day");
 
     const { data, loading } = useApiFetch(`/trending/movie/${endpoint}`);

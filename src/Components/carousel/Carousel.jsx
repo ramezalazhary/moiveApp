@@ -1,18 +1,10 @@
-import React, { useRef, useState } from "react";
-import {
-    BsFillArrowLeftCircleFill,
-    BsFillArrowRightCircleFill,
-} from "react-icons/bs";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
-
 import ContentWraper from "../contentWraper/ContentWraper";
-
 import PosterFallback from "../../assets/no-poster.png";
 import CircleRating from "../circleRating/CircleRating";
-
-
 import "./style.scss";
 import Genres from "../genres/Genres";
 import Img from "../lazyLoaingImg/Img";
@@ -114,13 +106,9 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                         </div>
                     ) : (
                         <div className="loadingSkeleton">
-                            <div className="skeletonItem">
-                                <div className="posterBlock skeleton"> </div>
-                                <div className="textBlock">
-                                    <div className="title skeleton"> </div>
-                                    <div className="date skeleton"> </div>
-                                </div>
-                            </div>
+                                {
+                                    skItem
+                                }
                         </div>
                     )}
                 </Swiper>

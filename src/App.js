@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchDataFromApi } from './utils/api';
 import { getApiConfiguration } from './store/homeSlice';
@@ -9,7 +9,7 @@ import ArrowUp from './Components/arrowUp/ArrowUp';
 import { useInView } from 'react-intersection-observer';
 
 function App() {
-  const { ref, inView, entry } = useInView();
+  const { ref, inView } = useInView();
   const dispatch = useDispatch();
   const getConfigurApiData = () => {
 

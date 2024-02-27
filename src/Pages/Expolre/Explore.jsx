@@ -41,14 +41,7 @@ const Explore = () => {
 
   const { data: genresData } = useApiFetch(`/genre/${mediaType}/list`);
 
-  const fetchInitialData = () => {
-    setLoading(true);
-    fetchDataFromApi(`/discover/${mediaType}`, filters).then((res) => {
-      setData(res);
-      setPageNum((prev) => prev + 1);
-      setLoading(false);
-    });
-  };
+
 
   const fetchNextPageData = () => {
     fetchDataFromApi(
@@ -64,6 +57,15 @@ const Explore = () => {
         setData(res);
       }
       setPageNum((prev) => prev + 1);
+    });
+  };
+  const fetchInitialData = () => {
+    console.log("explor")
+    setLoading(true);
+    fetchDataFromApi(`/discover/${mediaType}`, filters).then((res) => {
+      setData(res);
+      setPageNum((prev) => prev + 1);
+      setLoading(false);
     });
   };
 

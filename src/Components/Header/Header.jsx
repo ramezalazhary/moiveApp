@@ -7,7 +7,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./style.scss";
 import logo from "../../assets/MoveLogo.webp";
 import ContentWraper from "../contentWraper/ContentWraper";
-import Img from "../lazyLoaingImg/Img";
 
 const Header = () => {
     const [show, setShow] = useState("top");
@@ -21,28 +20,28 @@ const Header = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location]);
-
-    const controlNavbar = () => {
-
-        if (window.scrollY > 200) {
-            if (window.scrollY > lastScrollY && !mobileMenu) {
-                setShow("hide");
-            } else {
-                setShow("show");
-            }
-        } else {
-            setShow("top");
-        }
-        setLastScrollY(window.scrollY);
-    };
-
     useEffect(() => {
+        const controlNavbar = () => {
+
+            if (window.scrollY > 200) {
+                if (window.scrollY > lastScrollY && !mobileMenu) {
+                    setShow("hide");
+                } else {
+                    setShow("show");
+                }
+            } else {
+                setShow("top");
+            }
+            setLastScrollY(window.scrollY);
+        };
 
         window.addEventListener("scroll", controlNavbar);
         return () => {
             window.removeEventListener("scroll", controlNavbar);
         };
-    }, [lastScrollY]);
+    }, [lastScrollY, mobileMenu]);
+
+
 
     const searchQueryHandler = (event) => {
         if (event.key === "Enter" && query.length > 0) {

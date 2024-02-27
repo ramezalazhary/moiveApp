@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-
-
 import ContentWraper from "../../../Components/contentWraper/ContentWraper";
 import Carousel from "../../../Components/carousel/Carousel";
 import SwitchTabs from "../../../Components/switchTabs/SwitchTabs";
@@ -10,7 +8,7 @@ import { useInView } from "react-intersection-observer";
 
 
 const Popular = () => {
-    const [ref, inview, entry] = useInView();
+    const [ref, inview] = useInView();
 
     const [endpoint, setEndpoint] = useState("movie");
 

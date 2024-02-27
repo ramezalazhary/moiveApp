@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './style.scss';
 import useApiFetch from '../../../Hooks/useApiFetching';
 import { useSelector } from 'react-redux';
@@ -6,6 +6,7 @@ import ContentWraper from '../../../Components/contentWraper/ContentWraper';
 import Img from '../../../Components/lazyLoaingImg/Img';
 import { useNavigate } from 'react-router-dom';
 import { IoSearch } from "react-icons/io5";
+
 export default function HeroBanner() {
     const [query, setQuery] = useState("");
     const [backGround, setBackGround] = useState("");
@@ -14,17 +15,11 @@ export default function HeroBanner() {
     const navigate = useNavigate();
 
     useEffect(() => {
-
         if (!data) return;
         choosenBackGround()
-
         const scroll = setInterval(() => { choosenBackGround() }, 10000);
-
-
-
-
         return () => clearInterval(scroll)
-    }, [data, urlRes]);
+    }, [data, urlRes,]);
 
     const choosenBackGround = () => {
 
@@ -33,6 +28,7 @@ export default function HeroBanner() {
 
         setBackGround(ImageUrl)
     }
+    
     const searchQueryHandler = (event) => {
 
         if (event.key === "Enter" && query.length > 0) {

@@ -10,7 +10,7 @@ import { useInView } from "react-intersection-observer";
 
 
 const TopRated = () => {
-    const [ref, inview, entry] = useInView()
+    const [ref, inview] = useInView()
     const [endpoint, setEndpoint] = useState("movie");
 
     const { data, loading } = useApiFetch(`/${endpoint}/top_rated`);
