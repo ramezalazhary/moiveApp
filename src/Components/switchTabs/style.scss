@@ -1,14 +1,24 @@
+@import '../../mixins.scss';
+
 .switchingTabs {
-    height: 34px;
+    height: 28px;
     background-color: white;
     border-radius: 20px;
     padding: 2px;
 
+
+    @include md {
+        height: 34px;
+    }
+
     .tabItems {
+
         display: flex;
         align-items: center;
-        height: 30px;
+        height: 100%;
         position: relative;
+
+
 
         .tabItem {
             height: 100%;
@@ -29,7 +39,7 @@
         }
 
         .movingBg {
-            height: 30px;
+            height: 100%;
             width: 100px;
             border-radius: 15px;
             background-image: var(--gradient);

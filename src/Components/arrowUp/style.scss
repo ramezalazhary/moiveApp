@@ -1,0 +1,25 @@
+@import '../../mixins.scss';
+
+.arrowUp {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.638);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-size: 30px;
+    position: fixed;
+    bottom: 40px;
+    right: 80px;
+    z-index: 1234;
+
+    @include md {
+        font-size: 40px;
+    }
+
+
+    &.hidden {
+        display: none;
+    }
+}

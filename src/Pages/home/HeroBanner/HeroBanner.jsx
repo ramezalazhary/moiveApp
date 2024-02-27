@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import ContentWraper from '../../../Components/contentWraper/ContentWraper';
 import Img from '../../../Components/lazyLoaingImg/Img';
 import { useNavigate } from 'react-router-dom';
-
+import { IoSearch } from "react-icons/io5";
 export default function HeroBanner() {
     const [query, setQuery] = useState("");
     const [backGround, setBackGround] = useState("");
@@ -60,11 +60,11 @@ export default function HeroBanner() {
                     <div className="searchInput">
                         <input
                             type="text"
-                            placeholder="Search for a movie or tv show...."
+                            placeholder="Search"
                             onChange={(e) => setQuery(e.target.value)}
                             onKeyUp={searchQueryHandler}
                         />
-                        <button className='submit'>Search</button>
+                        <button className='btn-search' aria-label="search-btn"><IoSearch /></button>
                     </div>
                 </div>
             </ContentWraper>

@@ -5,10 +5,12 @@ import { getApiConfiguration } from './store/homeSlice';
 import { Outlet } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
+import ArrowUp from './Components/arrowUp/ArrowUp';
+import { useInView } from 'react-intersection-observer';
 
 function App() {
+  const { ref, inView, entry } = useInView();
   const dispatch = useDispatch();
-  
   const getConfigurApiData = () => {
 
     fetchDataFromApi("/configuration").then((res) => {
@@ -19,25 +21,18 @@ function App() {
       };
       dispatch(getApiConfiguration(url))
     })
-
   }
 
   useEffect(() => {
-
-
     getConfigurApiData()
-
-
   }, [])
-
-
   return (
-    <div className="App">
+    <div className="App" >
       <Header />
-
       <Outlet />
-
+      <ArrowUp />
       <Footer />
+
     </div>
   );
 }

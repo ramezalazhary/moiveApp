@@ -7,7 +7,10 @@ import ContentWraper from "../../../Components/contentWraper/ContentWraper";
 import Img from "../../../Components/lazyLoaingImg/Img";
 import VideoPopup from "../../../Components/videoPopup/VideoPopup";
 
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
+// import required modules
 const VideoSection = ({ data, loading }) => {
     const [show, setShow] = useState(false);
     const [videoId, setVideoId] = useState(null);
@@ -26,17 +29,43 @@ const VideoSection = ({ data, loading }) => {
         <div className="videosSection">
             <ContentWraper>
                 <div className="sectionHeading">Official Videos</div>
-                {!loading ? (
-                    <div className="videos">
-                        {data?.results?.map((video) => (
-                            <div
+
+
+                <Swiper
+                    breakpoints={{
+                        1200: {
+                            slidesPerView: 5,
+                            spaceBetween: 15,
+                        },
+                        920: {
+                            slidesPerView: 5,
+                            spaceBetween: 12,
+                        },
+                        720: {
+                            slidesPerView: 4,
+                            spaceBetween: 10,
+                        },
+                        250: {
+                            slidesPerView: 2,
+                            spaceBetween: 10,
+                        },
+
+                    }}
+                    className="videos"
+                >
+                    {!loading ? (
+
+                        data?.results?.map((video) => (
+
+                            <SwiperSlide
                                 key={video.id}
                                 className="videoItem"
                                 onClick={() => {
                                     setVideoId(video.key);
                                     setShow(true);
-                                }}
-                            >
+                                }} >
+
+
                                 <div className="videoThumbnail">
                                     <Img
                                         src={`https://img.youtube.com/vi/${video.key}/mqdefault.jpg`}
@@ -44,17 +73,20 @@ const VideoSection = ({ data, loading }) => {
                                     <PlayIcon />
                                 </div>
                                 <div className="videoTitle">{video.name}</div>
-                            </div>
-                        ))}
-                    </div>
-                ) : (
-                    <div className="videoSkeleton">
-                        {loadingSkeleton()}
-                        {loadingSkeleton()}
-                        {loadingSkeleton()}
-                        {loadingSkeleton()}
-                    </div>
-                )}
+
+                            </SwiperSlide>
+
+                        ))
+
+                    ) : (
+                        <div className="videoSkeleton">
+                            {loadingSkeleton()}
+                            {loadingSkeleton()}
+                            {loadingSkeleton()}
+                            {loadingSkeleton()}
+                        </div>
+                    )}
+                </Swiper>
             </ContentWraper>
             <VideoPopup
                 show={show}
@@ -62,7 +94,7 @@ const VideoSection = ({ data, loading }) => {
                 videoId={videoId}
                 setVideoId={setVideoId}
             />
-        </div>
+        </div >
     );
 };
 

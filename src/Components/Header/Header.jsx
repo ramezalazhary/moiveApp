@@ -73,7 +73,7 @@ const Header = () => {
 
     return (
 
-        <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
+        <header className={`header ${mobileMenu ? "mobileView" : ""} ${show} ${showSearch ? "visible" : ""}`}>
             <ContentWraper>
                 <div className="logo" onClick={() => navigate("/")}>
                     <img src={logo} alt="" />
@@ -104,24 +104,25 @@ const Header = () => {
                         <SlMenu onClick={openMobileMenu} />
                     )}
                 </div>
+                {showSearch && (
+                    <div className="searchBar">
+                        <ContentWraper>
+                            <div className="searchInput">
+                                <input
+                                    type="text"
+                                    placeholder="Search for a movie or tv show...."
+                                    onChange={(e) => setQuery(e.target.value)}
+                                    onKeyUp={searchQueryHandler}
+                                />
+                                <VscChromeClose
+                                    onClick={() => setShowSearch(false)}
+                                />
+                            </div>
+                        </ContentWraper>
+                    </div>)}
             </ContentWraper>
-            {showSearch && (
-                <div className="searchBar">
-                    <ContentWraper>
-                        <div className="searchInput">
-                            <input
-                                type="text"
-                                placeholder="Search for a movie or tv show...."
-                                onChange={(e) => setQuery(e.target.value)}
-                                onKeyUp={searchQueryHandler}
-                            />
-                            <VscChromeClose
-                                onClick={() => setShowSearch(false)}
-                            />
-                        </div>
-                    </ContentWraper>
-                </div>
-            )}
+
+
         </header>
     );
 };
