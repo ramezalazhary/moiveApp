@@ -16,7 +16,6 @@ function ArrowUp() {
     };
 
     useEffect(() => {
-
         window.addEventListener("scroll", controlNavbar);
         return () => {
             window.removeEventListener("scroll", controlNavbar);
@@ -27,9 +26,9 @@ function ArrowUp() {
     const handleClick = () => {
         window.scroll(0, 0)
     }
-    return (
+    return !position ? (
         <div
-            className={`arrowUp  ${position ? "hidden" : " "}`}
+            className={`arrowUp `}
             onClick={handleClick}
         >
             <IoIosArrowDropupCircle />
@@ -37,7 +36,7 @@ function ArrowUp() {
 
         </div>
 
-    )
+    ) : (null)
 }
 
 export default React.memo(ArrowUp)

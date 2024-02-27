@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import './style.scss';
 import useApiFetch from '../../../Hooks/useApiFetching';
 import { useSelector } from 'react-redux';
@@ -18,10 +18,10 @@ export default function HeroBanner() {
         if (!data) return;
         choosenBackGround()
 
-        const scroll = setInterval(() => {
-            choosenBackGround()
+        const scroll = setInterval(() => { choosenBackGround() }, 10000);
 
-        }, 10000);
+
+
 
         return () => clearInterval(scroll)
     }, [data, urlRes]);
@@ -34,10 +34,11 @@ export default function HeroBanner() {
         setBackGround(ImageUrl)
     }
     const searchQueryHandler = (event) => {
+
         if (event.key === "Enter" && query.length > 0) {
             navigate(`/search/${query}`);
         }
-    };
+    }
 
     return (
 

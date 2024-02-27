@@ -22,7 +22,7 @@
     }
 
     &.visible {
-        background-color: rgba(193, 193, 193, 0.545);
+        background-color: rgba(193, 193, 193, 0.883);
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
     }
@@ -135,9 +135,10 @@
     .searchBar {
         width: 100%;
         height: 60px;
-        background-color: rgba(193, 193, 193, 0.545);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
+        background-color: rgba(193, 193, 193, 0.883);
+        color: #1c1c1cb5;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         position: absolute;
         top: 60px;
         left: 0;
@@ -160,7 +161,7 @@
             }
 
             input {
-                color: rgb(255, 255, 255) !important;
+                color: #262626 !important;
                 width: 100%;
                 height: 50px;
                 background-color: transparent;

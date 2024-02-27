@@ -5,8 +5,9 @@ import { VscChromeClose } from "react-icons/vsc";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import "./style.scss";
-import logo from "../../assets/Move-New-Logo-2021-removebg-preview.png";
+import logo from "../../assets/MoveLogo.webp";
 import ContentWraper from "../contentWraper/ContentWraper";
+import Img from "../lazyLoaingImg/Img";
 
 const Header = () => {
     const [show, setShow] = useState("top");
@@ -76,7 +77,8 @@ const Header = () => {
         <header className={`header ${mobileMenu ? "mobileView" : ""} ${show} ${showSearch ? "visible" : ""}`}>
             <ContentWraper>
                 <div className="logo" onClick={() => navigate("/")}>
-                    <img src={logo} alt="" />
+
+                    <img alt="logo" src={logo} />
                 </div>
                 <ul className="menuItems">
                     <li

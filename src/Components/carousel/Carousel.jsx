@@ -76,7 +76,6 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                     ? urlRes?.poster + item?.poster_path
                                     : PosterFallback;
                                 return (
-
                                     <SwiperSlide key={item.id}
                                         className="carouselItem"
                                         onClick={() =>

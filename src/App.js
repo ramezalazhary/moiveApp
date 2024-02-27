@@ -26,12 +26,14 @@ function App() {
   useEffect(() => {
     getConfigurApiData()
   }, [])
+
+
   return (
-    <div className="App" >
+    <div className="App" ref={ref}>
       <Header />
       <Outlet />
       <ArrowUp />
-      <Footer />
+      {inView && <Footer />}
 
     </div>
   );
