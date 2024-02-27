@@ -28,7 +28,7 @@ export default function HeroBanner() {
 
         setBackGround(ImageUrl)
     }
-    
+
     const searchQueryHandler = (event) => {
 
         if (event.key === "Enter" && query.length > 0) {
