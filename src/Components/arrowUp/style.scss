@@ -8,13 +8,14 @@
     align-items: center;
     justify-content: center;
     color: var(--black);
-    font-size: 30px;
+    font-size: 35px;
     position: fixed;
     bottom: 40px;
-    right: 80px;
+    right: 50px;
     z-index: 1234;
 
     @include md {
+        right: 50px;
         font-size: 40px;
     }
 

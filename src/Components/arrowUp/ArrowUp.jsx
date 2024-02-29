@@ -7,7 +7,7 @@ function ArrowUp() {
 
     const controlNavbar = () => {
 
-        if (window.scrollY > 800) {
+        if (window.scrollY > 300) {
             setPosition(false)
         } else {
             setPosition(true)
